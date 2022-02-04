@@ -26,6 +26,7 @@ data "template_file" "wr" {
     vpn_cidr              = var.vpn_cidr
     vpn_listen_port       = var.vpn_listen_port
     vpn_internal_networks = var.vpn_internal_networks
+    vpn_peer_prefix       = replace(replace(var.ibm_resource_prefix, "-", ""), "_", "")
   }
 }
 
